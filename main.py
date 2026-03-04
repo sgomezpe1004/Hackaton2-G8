@@ -1,7 +1,8 @@
-import os, json, base64, tempfile, threading, tkinter as tk
+import os, json, threading, tkinter as tk
 from tkinter import font as tkfont
 from datetime import datetime
-import requests, numpy as np, sounddevice as sd, soundfile as sf
+import requests, numpy as np, sounddevice as sd
+import whisper
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -9,6 +10,11 @@ API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 MODEL = "openai/gpt-5.2"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+# Load Whisper model once at startup
+print("Loading Whisper model (small)...")
+whisper_model = whisper.load_model("small")
+print("Whisper model loaded!")
 
 # ── Parse HTML schedules ──
 def parse_schedules():
@@ -96,19 +102,13 @@ def chat_api(messages):
     except Exception as e:
         return f"❌ {e}"
 
-def transcribe(path):
-    """Transcribe audio using OpenRouter gpt-4o-audio-preview."""
+def transcribe_audio(audio_np):
+    """Transcribe audio using local Whisper model (no API needed)."""
     try:
-        with open(path, "rb") as f:
-            b64 = base64.b64encode(f.read()).decode("utf-8")
-        r = requests.post(API_URL, headers={"Authorization": f"Bearer {API_KEY}",
-                          "Content-Type": "application/json"},
-                          json={"model": "openai/gpt-4o-audio-preview",
-                                "messages": [{"role": "user", "content": [
-                                    {"type": "text", "text": "Transcribe this audio exactly. Return only the transcription, nothing else."},
-                                    {"type": "input_audio", "input_audio": {"data": b64, "format": "wav"}}]}]})
-        r.raise_for_status()
-        return r.json()["choices"][0]["message"]["content"].strip()
+        result = whisper_model.transcribe(audio_np, language="en", fp16=False,
+                                          condition_on_previous_text=False,
+                                          no_speech_threshold=0.5)
+        return result["text"].strip()
     except Exception as e:
         return f"[Transcription failed: {e}]"
 
@@ -225,17 +225,18 @@ class App:
             with sd.InputStream(samplerate=16000, channels=1, dtype="float32", callback=callback):
                 while self._recording:
                     sd.sleep(50)
-            audio = np.concatenate(self._frames) if self._frames else np.array([])
+            if not self._frames:
+                self.root.after(0, lambda: (self.add("🎤 Too short", True, True), self.set_busy(False),
+                                            self.rec_btn.config(text="● REC", bg=C["rec"])))
+                return
+            audio = np.concatenate(self._frames).flatten()
             if len(audio) < 1600:  # less than 0.1s
                 self.root.after(0, lambda: (self.add("🎤 Too short", True, True), self.set_busy(False),
                                             self.rec_btn.config(text="● REC", bg=C["rec"])))
                 return
-            tmp = tempfile.mktemp(suffix=".wav")
-            sf.write(tmp, audio, 16000)
             self.root.after(0, lambda: (self.status.config(text="🔄 Transcribing...", fg=C["warn"]),
                                         self.rec_btn.config(text="● REC", bg=C["rec"])))
-            text = transcribe(tmp)
-            os.unlink(tmp)
+            text = transcribe_audio(audio)
             if not text or text.startswith("["):
                 err = text or "No transcription returned"
                 self.root.after(0, lambda: (self.add(f"🎤 {err}", True, True), self.set_busy(False)))
