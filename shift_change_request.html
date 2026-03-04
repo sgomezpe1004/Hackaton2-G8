@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://www.effectiveai.net/scr-form.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Change Request – EAI Ambulance Service</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #050a14;
+            color: #c8d8f0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('Background V01.png') center/cover no-repeat;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ── Header ── */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(0, 180, 255, 0.15);
+        }
+
+        .header-left .site-logo {
+            display: block;
+            height: 60px;
+            width: auto;
+            filter: invert(1) hue-rotate(180deg) saturate(0.15) brightness(2.8);
+        }
+
+        .header-left .subtitle {
+            font-size: 0.82rem;
+            color: #4a7a9a;
+            margin-top: 0.4rem;
+            letter-spacing: 0.04em;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.3rem;
+            background: rgba(0, 180, 255, 0.08);
+            border: 1px solid rgba(0, 180, 255, 0.35);
+            border-radius: 6px;
+            color: #00b4ff;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 180, 255, 0.16);
+            box-shadow: 0 0 16px rgba(0, 180, 255, 0.2);
+        }
+
+        .back-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ── Note ── */
+        .note {
+            font-size: 0.82rem;
+            color: #5a8aa8;
+            margin-bottom: 2rem;
+            padding: 0.6rem 1rem;
+            border-left: 2px solid rgba(0, 180, 255, 0.3);
+            background: rgba(0, 180, 255, 0.04);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ── Form card ── */
+        .form-card {
+            background: rgba(0, 10, 28, 0.7);
+            border: 1px solid rgba(0, 180, 255, 0.15);
+            border-radius: 10px;
+            padding: 2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #5a8aa8;
+        }
+
+        input,
+        select,
+        textarea {
+            background: rgba(0, 20, 50, 0.6);
+            border: 1px solid rgba(0, 180, 255, 0.2);
+            border-radius: 6px;
+            padding: 0.6rem 0.85rem;
+            color: #c8d8f0;
+            font-family: inherit;
+            font-size: 0.92rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: rgba(0, 180, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.1);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #2a4a68;
+        }
+
+        select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        select option {
+            background: #0a1a30;
+            color: #c8d8f0;
+        }
+
+        /* Dropdown arrow */
+        .select-wrap {
+            position: relative;
+        }
+
+        .select-wrap::after {
+            content: '';
+            position: absolute;
+            right: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent;
+            border-top-color: #00b4ff;
+            pointer-events: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+            line-height: 1.5;
+        }
+
+        /* Hidden reason box */
+        #reason-group {
+            display: none;
+        }
+
+        #reason-group.visible {
+            display: flex;
+        }
+
+        /* ── Divider ── */
+        .form-divider {
+            height: 1px;
+            background: rgba(0, 180, 255, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        /* ── Submit ── */
+        .submit-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.75rem;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 2rem;
+            background: rgba(0, 180, 255, 0.12);
+            border: 1px solid rgba(0, 180, 255, 0.5);
+            border-radius: 6px;
+            color: #00b4ff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: rgba(0, 180, 255, 0.22);
+            box-shadow: 0 0 24px rgba(0, 180, 255, 0.25);
+        }
+
+        .submit-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ── Success banner ── */
+        #success-banner {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            background: rgba(0, 200, 100, 0.08);
+            border: 1px solid rgba(0, 200, 100, 0.3);
+            border-radius: 8px;
+            color: #50e898;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.78rem;
+            color: #2a4060;
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <style type="text/css" id="operaUserStyle"></style>
+    <style type="text/css"></style>
+</head>
+
+<body>
+    <div class="page">
+        <nav>
+            <a href="main.html">Back to Home</a>
+            <a href="aprilschedule.html">April Schedule</a>
+            <a href="marchschedule.html">March Schedule</a>
+        </nav>
+        <header>
+            <div class="header-left">
+                <img class="site-logo" src="./Logo2.png" alt="EffectiveAI Inc.">
+                <div class="subtitle">EAI Ambulance Service &nbsp;·&nbsp; Shift Change Request</div>
+            </div>
+            <a class="back-btn" href="https://www.effectiveai.net/index.html">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </header>
+
+        <div class="note">
+            All Shift Change Requests (SCR) must be submitted below for approval.
+            Requests are reviewed by the scheduling team and a confirmation will be sent to you.
+        </div>
+
+        <div class="form-card">
+            <form id="scr-form" novalidate="">
+
+                <!-- Personal info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Jane" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Smith" required="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="medic-number">Medic Number</label>
+                        <input type="text" id="medic-number" name="medic_number" placeholder="e.g. Team07" required="">
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <!-- Shift details -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shift-day">Shift Day</label>
+                        <input type="date" id="shift-day" name="shift_day" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="shift-start">Shift Start</label>
+                        <input type="time" id="shift-start" name="shift_start" required="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shift-end">Shift End</label>
+                        <input type="time" id="shift-end" name="shift_end" required="">
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <!-- Requested action -->
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label for="action">Requested Action</label>
+                        <div class="select-wrap">
+                            <select id="action" name="action" required="">
+                                <option value="" disabled="" selected="">Select an action…</option>
+                                <option value="Day Off Request">Day Off Request</option>
+                                <option value="Swap Shift">Swap Shift</option>
+                                <option value="Vacation Day">Vacation Day</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reason (shown only when Other is selected) -->
+                <div class="form-row">
+                    <div class="form-group full" id="reason-group">
+                        <label for="reason">Reason</label>
+                        <textarea id="reason" name="reason" placeholder="Please describe your reason…"></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-row">
+                    <button type="submit" class="submit-btn">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        Submit Request
+                    </button>
+                </div>
+
+            </form>
+
+            <div id="success-banner">
+                Your email client will open with the request pre-filled. Please send the email to complete your
+                submission.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        EffectiveAI Inc. &nbsp;·&nbsp; 2038 Coral Cres., Burlington, Ontario, L7P 3K5<br>
+        © 2026 EffectiveAI Inc. All rights reserved.
+    </footer>
+
+    <script>
+        const actionSelect = document.getElementById('action');
+        const reasonGroup = document.getElementById('reason-group');
+        const reasonField = document.getElementById('reason');
+
+        actionSelect.addEventListener('change', function () {
+            if (this.value === 'Other') {
+                reasonGroup.classList.add('visible');
+                reasonField.required = true;
+            } else {
+                reasonGroup.classList.remove('visible');
+                reasonField.required = false;
+                reasonField.value = '';
+            }
+        });
+
+        function fmt(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        function fmtTime(val) {
+            if (!val) return '';
+            const [h, m] = val.split(':');
+            const hour = parseInt(h, 10);
+            const suffix = hour < 12 ? 'AM' : 'PM';
+            const h12 = hour % 12 || 12;
+            return `${h12}:${m} ${suffix}`;
+        }
+
+        function fmtDate(val) {
+            if (!val) return '';
+            const [y, m, d] = val.split('-');
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            return `${months[parseInt(m, 10) - 1]} ${parseInt(d, 10)}, ${y}`;
+        }
+
+        document.getElementById('scr-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Basic validation
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            const firstName = fmt('first-name');
+            const lastName = fmt('last-name');
+            const medicNum = fmt('medic-number');
+            const shiftDay = fmtDate(fmt('shift-day'));
+            const shiftStart = fmtTime(fmt('shift-start'));
+            const shiftEnd = fmtTime(fmt('shift-end'));
+            const action = actionSelect.value;
+            const reason = fmt('reason');
+
+            const subject = encodeURIComponent(
+                `SCR – ${firstName} ${lastName} (${medicNum}) – ${shiftDay}`
+            );
+
+            let body = `SHIFT CHANGE REQUEST\n`;
+            body += `${'='.repeat(40)}\n\n`;
+            body += `Name:          ${firstName} ${lastName}\n`;
+            body += `Medic Number:  ${medicNum}\n\n`;
+            body += `Shift Day:     ${shiftDay}\n`;
+            body += `Shift Start:   ${shiftStart}\n`;
+            body += `Shift End:     ${shiftEnd}\n\n`;
+            body += `Requested Action: ${action}\n`;
+            if (action === 'Other' && reason) {
+                body += `\nReason:\n${reason}\n`;
+            }
+            body += `\n${'='.repeat(40)}\n`;
+            body += `Submitted via EAI Ambulance Service website.`;
+
+            const mailtoLink = `mailto:terence.Kuehn@EffectiveAI.net?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+            document.getElementById('success-banner').style.display = 'block';
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+
+</body>
+
+</html>

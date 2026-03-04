@@ -1,4 +1,4 @@
-import os, json, tempfile, threading, tkinter as tk
+import os, json, base64, tempfile, threading, tkinter as tk
 from tkinter import font as tkfont
 from datetime import datetime
 import requests, numpy as np, sounddevice as sd, soundfile as sf
@@ -8,6 +8,66 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 MODEL = "openai/gpt-5.2"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
+BASE = os.path.dirname(os.path.abspath(__file__))
+
+# ── Parse HTML schedules ──
+def parse_schedules():
+    """Extract shift data from HTML schedule files into plain text."""
+    import re, html as htmlmod
+    text = ""
+    for fname in ("marchschedule.html", "aprilschedule.html"):
+        path = os.path.join(BASE, fname)
+        if not os.path.exists(path): continue
+        with open(path, encoding="utf-8") as f: raw = f.read()
+        month = fname.replace("schedule.html", "").upper()
+        text += f"\n=== {month} 2026 SCHEDULE ===\n"
+        tags = re.findall(r'class="(day-name|day-date|shift-station|shift-unit|shift-time|shift-medics)">(.*?)<', raw)
+        station, unit, day_line = "", "", ""
+        for cls, val in tags:
+            val = htmlmod.unescape(val)
+            if cls == "day-name": day_line = val
+            elif cls == "day-date": text += f"\n{day_line} {val}:\n"; station = unit = ""
+            elif cls == "shift-station": station = val
+            elif cls == "shift-unit": unit = val
+            elif cls == "shift-time":
+                label = f"{station} | {unit}" if unit else station
+                text += f"  {label} | {val} | "
+            elif cls == "shift-medics":
+                text += f"{val}\n"; unit = ""
+    return text
+
+SCHEDULES = parse_schedules()
+
+SYSTEM = f"""You are an EAI Ambulance Service scheduling assistant. Today is {datetime.now().strftime('%B %d, %Y')}.
+
+SCHEDULES (March & April 2026):
+{SCHEDULES}
+
+CAPABILITIES:
+1. **Schedule Lookup** — When a user asks about a team's schedule (e.g. "What's Team01's schedule next week?"), find and list their shifts from the data above.
+2. **Shift Change Request** — When a user wants a shift change, collect ALL required fields:
+   - First Name
+   - Last Name
+   - Medic Number (e.g. Team07)
+   - Shift Day (date)
+   - Shift Start time
+   - Shift End time
+   - Requested Action: Day Off Request, Swap Shift, Vacation Day, or Other (if Other, ask for Reason)
+
+   After each user message, list which fields are filled and which are MISSING.
+   Once ALL fields are complete, display a summary like:
+   ✅ SHIFT CHANGE REQUEST COMPLETE
+   Name: [First] [Last]
+   Medic Number: [number]
+   Shift Day: [date]
+   Shift Start: [time]
+   Shift End: [time]
+   Action: [action]
+   (Reason: [reason] — only if Other)
+   
+   Then tell the user to submit via the Shift Change Request form.
+
+Be concise. Use the schedule data to answer questions accurately."""
 
 # ── Colors ──
 C = dict(bg="#0D0D1A", chat="#111122", input="#1A1A30", user="#6C63FF",
@@ -26,15 +86,18 @@ def chat_api(messages):
         return f"❌ {e}"
 
 def transcribe(path):
-    """Transcribe audio using Google's free speech recognition."""
-    import speech_recognition as sr
+    """Transcribe audio using OpenRouter gpt-4o-audio-preview."""
     try:
-        recognizer = sr.Recognizer()
-        with sr.AudioFile(path) as source:
-            audio = recognizer.record(source)
-        return recognizer.recognize_google(audio)
-    except sr.UnknownValueError:
-        return "[Could not understand audio]"
+        with open(path, "rb") as f:
+            b64 = base64.b64encode(f.read()).decode("utf-8")
+        r = requests.post(API_URL, headers={"Authorization": f"Bearer {API_KEY}",
+                          "Content-Type": "application/json"},
+                          json={"model": "openai/gpt-4o-audio-preview",
+                                "messages": [{"role": "user", "content": [
+                                    {"type": "text", "text": "Transcribe this audio exactly. Return only the transcription, nothing else."},
+                                    {"type": "input_audio", "input_audio": {"data": b64, "format": "wav"}}]}]})
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"].strip()
     except Exception as e:
         return f"[Transcription failed: {e}]"
 
@@ -57,19 +120,18 @@ class Bubble(tk.Frame):
 class App:
     def __init__(self, root):
         self.root = root
-        root.title("💬 AI Voice Chat")
+        root.title("🚑 EAI Schedule Chat")
         root.configure(bg=C["bg"])
         w, h = 420, 720
         root.geometry(f"{w}x{h}+{(root.winfo_screenwidth()-w)//2}+{(root.winfo_screenheight()-h)//2}")
         root.minsize(360, 500)
         self.busy = False
-        self.duration = tk.DoubleVar(value=5.0)
-        self.history = [{"role": "system", "content": "You are a helpful AI assistant. Be concise."}]
+        self.history = [{"role": "system", "content": SYSTEM}]
 
         # Header
         hdr = tk.Frame(root, bg=C["bg"])
         hdr.pack(fill=tk.X, padx=16, pady=(10,0))
-        tk.Label(hdr, text="💬 AI Voice Chat", font=("Segoe UI", 18, "bold"), fg=C["text"], bg=C["bg"]).pack(side=tk.LEFT)
+        tk.Label(hdr, text="🚑 EAI Schedule Chat", font=("Segoe UI", 18, "bold"), fg=C["text"], bg=C["bg"]).pack(side=tk.LEFT)
         self.status = tk.Label(hdr, text="● Online", font=("Segoe UI", 9), fg=C["ok"], bg=C["bg"])
         self.status.pack(side=tk.RIGHT)
         tk.Frame(root, bg=C["border"], height=1).pack(fill=tk.X, padx=16, pady=4)
@@ -89,20 +151,14 @@ class App:
         sb.pack(side=tk.RIGHT, fill=tk.Y)
 
         # Welcome
-        Bubble(self.chat, "Hi! 👋 Type or tap REC to chat.", is_user=False).pack(fill=tk.X)
+        Bubble(self.chat, "Hi! 🚑 Ask about schedules or request a shift change.", is_user=False).pack(fill=tk.X)
 
         tk.Frame(root, bg=C["border"], height=1).pack(fill=tk.X, padx=16)
 
-        # Audio bar
-        audio = tk.Frame(root, bg=C["bg"])
-        audio.pack(fill=tk.X, padx=16, pady=4)
-        self.dur_lbl = tk.Label(audio, text="5s", font=("Segoe UI", 14, "bold"), fg=C["accent"], bg=C["bg"])
-        self.dur_lbl.pack(side=tk.LEFT, padx=(0,6))
-        tk.Scale(audio, from_=1, to=30, orient=tk.HORIZONTAL, variable=self.duration, resolution=1,
-                 bg=C["bg"], fg=C["accent"], troughcolor=C["border"], highlightthickness=0, borderwidth=0,
-                 sliderrelief=tk.FLAT, length=140, showvalue=False,
-                 command=lambda v: self.dur_lbl.config(text=f"{int(float(v))}s")).pack(side=tk.LEFT)
-        self.rec_btn = tk.Button(audio, text="● REC", font=("Segoe UI", 11, "bold"), fg="#FFF",
+        # REC button
+        rec_bar = tk.Frame(root, bg=C["bg"])
+        rec_bar.pack(fill=tk.X, padx=16, pady=4)
+        self.rec_btn = tk.Button(rec_bar, text="● REC", font=("Segoe UI", 11, "bold"), fg="#FFF",
                                  bg=C["rec"], relief=tk.FLAT, cursor="hand2", padx=14, command=self.on_rec)
         self.rec_btn.pack(side=tk.RIGHT)
 
@@ -146,8 +202,7 @@ class App:
 
     def _do_record(self):
         try:
-            dur = self.duration.get()
-            audio = sd.rec(int(dur * 16000), samplerate=16000, channels=1, dtype="float32")
+            audio = sd.rec(int(10 * 16000), samplerate=16000, channels=1, dtype="float32")
             sd.wait()
             tmp = tempfile.mktemp(suffix=".wav")
             sf.write(tmp, audio, 16000)

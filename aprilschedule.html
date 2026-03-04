@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.effectiveai.net/calendars/april-2026.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAI Ambulance – April 2026</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #050a14;
+            color: #c8d8f0;
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('../Background V01.png') center/cover no-repeat;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(0, 180, 255, 0.15);
+        }
+
+        .header-left .site-logo {
+            display: block;
+            height: 60px;
+            width: auto;
+            filter: invert(1) hue-rotate(180deg) saturate(0.15) brightness(2.8);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.78rem;
+            color: #2a4060;
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+        }
+
+        .subtitle {
+            font-size: 0.82rem;
+            color: #4a7a9a;
+            margin-top: 0.4rem;
+            letter-spacing: 0.04em;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.3rem;
+            background: rgba(0, 180, 255, 0.08);
+            border: 1px solid rgba(0, 180, 255, 0.35);
+            border-radius: 6px;
+            color: #00b4ff;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 180, 255, 0.16);
+            box-shadow: 0 0 16px rgba(0, 180, 255, 0.2);
+        }
+
+        .back-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .note {
+            font-size: 0.82rem;
+            color: #5a8aa8;
+            margin-bottom: 2rem;
+            padding: 0.6rem 1rem;
+            border-left: 2px solid rgba(0, 180, 255, 0.3);
+            background: rgba(0, 180, 255, 0.04);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .week-block {
+            margin-bottom: 2rem;
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: rgba(0, 180, 255, 0.08);
+            border: 1px solid rgba(0, 180, 255, 0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .day-col {
+            background: #070e1c;
+            min-width: 0;
+        }
+
+        .day-header {
+            padding: 0.6rem 0.75rem 0.5rem;
+            background: rgba(0, 180, 255, 0.07);
+            border-bottom: 1px solid rgba(0, 180, 255, 0.15);
+            text-align: center;
+        }
+
+        .day-name {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #00b4ff;
+        }
+
+        .day-date {
+            font-size: 0.72rem;
+            color: #4a7a9a;
+            margin-top: 0.15rem;
+        }
+
+        .day-body {
+            padding: 0.5rem;
+        }
+
+        .shift-card {
+            background: rgba(0, 180, 255, 0.05);
+            border: 1px solid rgba(0, 180, 255, 0.1);
+            border-radius: 5px;
+            padding: 0.45rem 0.6rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .shift-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .shift-station {
+            font-weight: 700;
+            color: #a0c8e8;
+            font-size: 0.72rem;
+        }
+
+        .shift-unit {
+            color: #00b4ff;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .shift-time {
+            color: #6a9ab8;
+            font-size: 0.7rem;
+        }
+
+        .shift-medics {
+            color: #8aaac8;
+            font-size: 0.72rem;
+        }
+
+        .empty-day {
+            color: #1a3050;
+            font-size: 0.72rem;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <style type="text/css"></style>
+    <style type="text/css" id="operaUserStyle"></style>
+</head>
+
+<body>
+    <nav>
+        <a href="main.html">Back to Home</a>
+        <a href="shift_change_request.html">Shift Change Request</a>
+        <a href="marchschedule.html">March Schedule</a>
+    </nav>
+    <div class="page">
+        <header>
+            <div class="header-left">
+                <img class="site-logo" src="./Logo2.png" alt="EffectiveAI Inc.">
+                <div class="subtitle">EAI Ambulance Service &nbsp;·&nbsp; April 2026 Schedule</div>
+            </div>
+            <a class="back-btn" href="https://www.effectiveai.net/index.html"><svg viewBox="0 0 24 24">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>Back to Home</a>
+        </header>
+        <div class="note">All Shift Change Requests (SCR) must be emailed to <strong>Team0@EffectiveAI.net</strong> for
+            approval.</div>
+        <div class="week-block">
+            <div class="week-grid">
+                <div class="day-col"></div>
+                <div class="day-col"></div>
+                <div class="day-col"></div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-date">Apr 01</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Wednesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-date">Apr 02</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Thursday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Friday</div>
+                        <div class="day-date">Apr 03</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Friday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Saturday</div>
+                        <div class="day-date">Apr 04</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Saturday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="week-block">
+            <div class="week-grid">
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Sunday</div>
+                        <div class="day-date">Apr 05</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Sunday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Monday</div>
+                        <div class="day-date">Apr 06</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Monday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-date">Apr 07</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Tuesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-date">Apr 08</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Wednesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-date">Apr 09</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Thursday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Friday</div>
+                        <div class="day-date">Apr 10</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Friday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Saturday</div>
+                        <div class="day-date">Apr 11</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Saturday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="week-block">
+            <div class="week-grid">
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Sunday</div>
+                        <div class="day-date">Apr 12</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Sunday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Monday</div>
+                        <div class="day-date">Apr 13</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Monday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-date">Apr 14</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Tuesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-date">Apr 15</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Wednesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-date">Apr 16</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Thursday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Friday</div>
+                        <div class="day-date">Apr 17</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Friday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Saturday</div>
+                        <div class="day-date">Apr 18</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Saturday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="week-block">
+            <div class="week-grid">
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Sunday</div>
+                        <div class="day-date">Apr 19</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Sunday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Monday</div>
+                        <div class="day-date">Apr 20</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Monday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-date">Apr 21</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Tuesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-date">Apr 22</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Wednesday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-date">Apr 23</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Thursday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Friday</div>
+                        <div class="day-date">Apr 24</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Saturday</div>
+                        <div class="day-date">Apr 25</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="week-block">
+            <div class="week-grid">
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Sunday</div>
+                        <div class="day-date">Apr 26</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Monday</div>
+                        <div class="day-date">Apr 27</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-date">Apr 28</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team01 / Team02</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team03 / Team04</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team05 / Team06</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team07 / Team08</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team09 / Team10</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team11 / Team12</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team13 / Team14</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team15 / Team16</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team17 / Team18</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team19 / Team20</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team21 / Team22</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team23 / Team24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-date">Apr 29</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col">
+                    <div class="day-header">
+                        <div class="day-name">Thursday</div>
+                        <div class="day-date">Apr 30</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="shift-card">
+                            <div class="shift-station">Main St.</div>
+                            <div class="shift-unit">Unit 1122</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team25 / Team26</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team27 / Team28</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 2233</div>
+                            <div class="shift-time">7:00 AM – 7:00 PM</div>
+                            <div class="shift-medics">Team29 / Team30</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:00 PM – 7:00 AM</div>
+                            <div class="shift-medics">Team31 / Team32</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Woodgrove</div>
+                            <div class="shift-unit">Unit 3344</div>
+                            <div class="shift-time">7:30 AM – 7:30 PM</div>
+                            <div class="shift-medics">Team33 / Team34</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">7:30 PM – 7:30 AM</div>
+                            <div class="shift-medics">Team35 / Team36</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-unit">Unit 4455</div>
+                            <div class="shift-time">8:00 AM – 8:00 PM</div>
+                            <div class="shift-medics">Team37 / Team38</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">8:00 PM – 8:00 AM</div>
+                            <div class="shift-medics">Team39 / Team40</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Bedford</div>
+                            <div class="shift-unit">Unit 6677</div>
+                            <div class="shift-time">6:00 AM – 6:00 PM</div>
+                            <div class="shift-medics">Team41 / Team42</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">6:00 PM – 6:00 AM</div>
+                            <div class="shift-medics">Team43 / Team44</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-station">Coral</div>
+                            <div class="shift-unit">Unit 8899</div>
+                            <div class="shift-time">9:00 AM – 9:00 PM</div>
+                            <div class="shift-medics">Team45 / Team46</div>
+                        </div>
+                        <div class="shift-card">
+                            <div class="shift-time">9:00 PM – 9:00 AM</div>
+                            <div class="shift-medics">Team47 / Team48</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-col"></div>
+                <div class="day-col"></div>
+            </div>
+        </div>
+        <footer>
+            EffectiveAI Inc. &nbsp;·&nbsp; 2038 Coral Cres., Burlington, Ontario, L7P 3K5<br>
+            © 2026 EffectiveAI Inc. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+
+</html>
