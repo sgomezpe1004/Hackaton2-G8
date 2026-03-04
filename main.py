@@ -195,18 +195,34 @@ class App:
         self.ask_ai()
 
     def on_rec(self):
+        if hasattr(self, '_recording') and self._recording:
+            # Stop recording
+            self._recording = False
+            return
         if self.busy: return
+        self._recording = True
+        self._frames = []
         self.set_busy(True, "⏺ Recording...")
-        self.rec_btn.config(text="⏺ ...", bg=C["warn"])
+        self.rec_btn.config(text="■ STOP", bg=C["warn"], state=tk.NORMAL)
         threading.Thread(target=self._do_record, daemon=True).start()
 
     def _do_record(self):
         try:
-            audio = sd.rec(int(10 * 16000), samplerate=16000, channels=1, dtype="float32")
-            sd.wait()
+            def callback(indata, frames, time_info, status):
+                if self._recording:
+                    self._frames.append(indata.copy())
+            with sd.InputStream(samplerate=16000, channels=1, dtype="float32", callback=callback):
+                while self._recording:
+                    sd.sleep(50)
+            audio = np.concatenate(self._frames) if self._frames else np.array([])
+            if len(audio) < 1600:  # less than 0.1s
+                self.root.after(0, lambda: (self.add("🎤 Too short", True, True), self.set_busy(False),
+                                            self.rec_btn.config(text="● REC", bg=C["rec"])))
+                return
             tmp = tempfile.mktemp(suffix=".wav")
             sf.write(tmp, audio, 16000)
-            self.root.after(0, lambda: self.status.config(text="🔄 Transcribing...", fg=C["warn"]))
+            self.root.after(0, lambda: (self.status.config(text="🔄 Transcribing...", fg=C["warn"]),
+                                        self.rec_btn.config(text="● REC", bg=C["rec"])))
             text = transcribe(tmp)
             os.unlink(tmp)
             if not text or text.startswith("["):
@@ -217,7 +233,8 @@ class App:
             self.history.append({"role": "user", "content": text.strip()})
             self.root.after(0, self.ask_ai)
         except Exception as e:
-            self.root.after(0, lambda: (self.add(f"❌ {e}", False), self.set_busy(False)))
+            self.root.after(0, lambda: (self.add(f"❌ {e}", False), self.set_busy(False),
+                                        self.rec_btn.config(text="● REC", bg=C["rec"])))
 
     def ask_ai(self):
         self.set_busy(True, "💭 Thinking...")
